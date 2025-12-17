@@ -1,0 +1,16 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@inkjs/ui": "npm:@inkjs/ui@^2.0.0",
+    "@langchain/ollama": "npm:@langchain/ollama@^1.1.0",
+    "@std/assert": "jsr:@std/assert@1",
+    "ink": "npm:ink@^6.5.1",
+    "ink-markdown": "npm:ink-markdown@^1.0.4",
+    "inkjs": "npm:inkjs@^2.3.2",
+    "langchain": "npm:langchain@^1.2.1",
+    "marked-terminal": "npm:marked-terminal@^7.3.0",
+    "react": "npm:react@^19.2.3"
+  }
+}
