@@ -4,8 +4,11 @@
   },
   "imports": {
     "@inkjs/ui": "npm:@inkjs/ui@^2.0.0",
+    "@langchain/community": "npm:@langchain/community@^1.1.0",
+    "@langchain/core": "npm:@langchain/core@^1.1.6",
     "@langchain/ollama": "npm:@langchain/ollama@^1.1.0",
     "@std/assert": "jsr:@std/assert@1",
+    "duck-duck-scrape": "npm:duck-duck-scrape@^2.2.7",
     "ink": "npm:ink@^6.5.1",
     "ink-markdown": "npm:ink-markdown@^1.0.4",
     "inkjs": "npm:inkjs@^2.3.2",
