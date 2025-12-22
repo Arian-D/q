@@ -23,7 +23,7 @@ interface ModelPickerProps {
 
 export function ModelPicker({
   endpoint = "http://localhost:11434",
-  selectedModel = "qwen3:4b",
+  _selectedModel = "qwen3:4b",
   onSelect,
   searchThreshold = 0.6,
 }: ModelPickerProps) {
@@ -80,7 +80,7 @@ export function ModelPicker({
   return (
     <Box flexDirection="column" gap={1}>
       <Box>
-        <Text>Search:</Text>
+        <Text dimColor>Model →</Text>
         <TextInput
           value={searchQuery}
           onChange={setSearchQuery}

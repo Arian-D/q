@@ -16,6 +16,7 @@
     "npm:inkjs@^2.3.2": "2.3.2",
     "npm:langchain@^1.2.1": "1.2.1_@langchain+core@1.1.6__zod@4.2.1_zod@4.2.1_react@19.2.3",
     "npm:marked-terminal@^7.3.0": "7.3.0_marked@9.1.6",
+    "npm:marked@^9.1.6": "9.1.6",
     "npm:react@^19.2.3": "19.2.3"
   },
   "jsr": {
@@ -1490,6 +1491,7 @@
       "npm:inkjs@^2.3.2",
       "npm:langchain@^1.2.1",
       "npm:marked-terminal@^7.3.0",
+      "npm:marked@^9.1.6",
       "npm:react@^19.2.3"
     ]
   }

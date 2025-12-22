@@ -16,6 +16,7 @@
     "ink-markdown": "npm:ink-markdown@^1.0.4",
     "inkjs": "npm:inkjs@^2.3.2",
     "langchain": "npm:langchain@^1.2.1",
+    "marked": "npm:marked@^9.1.6",
     "marked-terminal": "npm:marked-terminal@^7.3.0",
     "react": "npm:react@^19.2.3"
   }

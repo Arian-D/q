@@ -1,11 +1,11 @@
-import { Alert, Spinner, TextInput } from "@inkjs/ui";
-import { DuckDuckGoSearch } from "@langchain/community/tools/duckduckgo_search";
+import { Spinner, TextInput } from "@inkjs/ui";
 import { WikipediaQueryRun } from "@langchain/community/tools/wikipedia_query_run";
 import { ChatOllama } from "@langchain/ollama";
-import { Box, render, Text } from "ink";
+import { Box, render } from "ink";
 import { createAgent } from "langchain";
-import React, { type ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ModelPicker } from "./ModelPicker.tsx";
+import { MarkdownRenderer } from "./MarkdownRenderer.tsx";
 
 function createOllamaAgent() {
   const model = new ChatOllama({
@@ -15,8 +15,7 @@ function createOllamaAgent() {
     maxRetries: 1,
   });
 
-  // TODO: Use a proper type
-  const tools: any[] = [
+  const tools = [
     // new DuckDuckGoSearch({ maxResults: 3 }),
     new WikipediaQueryRun({
       topKResults: 5,
@@ -28,7 +27,7 @@ function createOllamaAgent() {
   const agent = createAgent({
     model: model,
     // TODO: Add dynamic tool selection middleware
-    tools,
+    tools: tools as never[],
   });
 
   return agent;
@@ -41,7 +40,6 @@ interface PromptProps {
 function OllamaText({ prompt }: PromptProps) {
   const agent = createOllamaAgent();
   const [response, setResponse] = useState("");
-  const [error, setError] = useState(null);
   useEffect(() => {
     agent.stream({
       messages: [{
@@ -59,17 +57,11 @@ function OllamaText({ prompt }: PromptProps) {
       },
     );
   }, [prompt]);
-  if (error) {
-    // TODO: Figure out how to get around the child issue on deno
-    const children: ReactNode = String(error);
-    // deno-lint-ignore jsx-no-children-prop
-    return <Alert variant="error" children={children} />;
-  }
   if (response === "") {
     // TODO: Extend this component to signal osc 9;4
     return <Spinner />;
   } else {
-    return <Text color="cyanBright">{response}</Text>;
+    return <MarkdownRenderer content={response} />;
   }
 }
 
